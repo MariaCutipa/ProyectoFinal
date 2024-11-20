@@ -1,0 +1,4 @@
+pymongo
+spacy
+pymupdf
+scikit-learn
