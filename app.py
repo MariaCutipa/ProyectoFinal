@@ -13,7 +13,7 @@ with open("categorias.pkl", "rb") as f:
     categorias = pickle.load(f)
 
 # Conectar a MongoDB
-client = MongoClient("mongodb://localhost:27017/")  # Cambia a tu URI de MongoDB
+client = MongoClient("mongodb://mongo:27017/")
 db = client["mi_base_de_datos"]  # Nombre de la base de datos
 coleccion = db["usuarios"]  # Nombre de la colección
 
