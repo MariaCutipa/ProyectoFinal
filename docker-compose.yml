@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    volumes:
+      - .:/app
+    environment:
+      - MONGO_URI=mongodb://mongo:27017 
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
